@@ -21,10 +21,13 @@ document.querySelector('.check').addEventListener('click', function () {
     const guess = Number(document.querySelector('.guess').value);
     console.log(guess, typeof guess);
 
+    //when there is no input
     if (!guess) {
         document.querySelector('.message').textContent = 'No Number!';
-    } else if (guess == secretNumber) {
+    } else if (guess == secretNumber) { //when player wins
         document.querySelector('.message').textContent = 'Correct Number!';
+        document.querySelector('body').style.backgroundColor = '#60b347';
+        document.querySelector('.number').style.width = '30rem';
     } else if (guess > secretNumber) {
         if (score > 1) {
             document.querySelector('.message').textContent = 'Too high!';
